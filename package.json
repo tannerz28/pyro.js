@@ -1,0 +1,27 @@
+{
+  "name": "pyro.js",
+  "version": "1.0.0",
+  "description": "A 🔥 self-bot for Discord. TOS compliant,\u001b[1;5D\u001b[1;5D\u001b[1;5C\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[CFully TOS compliant\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tannerz28/pyro.js.git"
+  },
+  "keywords": [
+    "discord",
+    "self-bot",
+    "bot",
+    "pyro",
+    "pyro.js",
+    "selfbot"
+  ],
+  "author": "Tanner Goins",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tannerz28/pyro.js/issues"
+  },
+  "homepage": "https://github.com/tannerz28/pyro.js#readme"
+}
