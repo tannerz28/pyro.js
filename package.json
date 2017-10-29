@@ -1,10 +1,17 @@
 {
   "name": "pyro.js",
   "version": "1.0.0",
-  "description": "A 🔥 self-bot for Discord. TOS compliant,\u001b[1;5D\u001b[1;5D\u001b[1;5C\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[CFully TOS compliant\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
-  "main": "index.js",
+  "description": "A 🔥 self-bot for Discord. Completely TOS compliant, and full-featured to help automate and simplify your Discord workflow.",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run server:dev",
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --inline --progress --watch --open",
+    "server:prod": "cross-env NODE_ENV=production webpack-dashboard -- webpack-dev-server --config ./webpack.config.js --port 3000 --host 0.0.0.0 --hot --inline --progress --profile --watch --open --content-base dist/",
+    "build": "npm run build:dev",
+    "build:dev": "webpack --config ./webpack.config.js --progress --profile --color --display-error-details --display-cached",
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.js  --progress --profile --color --display-error-details --display-cached --bail",
+    "clean": "npm cache clear && rimraf -- dist"
   },
   "repository": {
     "type": "git",
@@ -23,5 +30,38 @@
   "bugs": {
     "url": "https://github.com/tannerz28/pyro.js/issues"
   },
-  "homepage": "https://github.com/tannerz28/pyro.js#readme"
+  "homepage": "https://github.com/tannerz28/pyro.js#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "discord.js-commando": "github:gawdl3y/discord.js-commando",
+    "sqlite": "^2.8.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.7",
+    "@types/common-tags": "^1.4.0",
+    "@types/node": "^8.0.47",
+    "@types/winston": "^2.3.7",
+    "awesome-typescript-loader": "^3.2.3",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "ejs-loader": "^0.3.0",
+    "esdoc": "^1.0.3",
+    "esdoc-standard-plugin": "^1.0.0",
+    "expose-loader": "^0.7.3",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
+    "pm2": "^2.7.2",
+    "rimraf": "^2.6.2",
+    "source-map-loader": "^0.2.3",
+    "standard": "^10.0.3",
+    "style-loader": "^0.19.0",
+    "typescript": "^2.5.3",
+    "typescript-standard": "^0.3.30",
+    "webpack": "^3.8.1",
+    "webpack-dashboard": "^1.0.0",
+    "webpack-dev-server": "^2.9.3",
+    "webpack-node-externals": "^1.6.0",
+    "winston": "^2.4.0"
+  }
 }
