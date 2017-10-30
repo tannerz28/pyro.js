@@ -4,7 +4,7 @@
   "description": "A 🔥 self-bot for Discord. Completely TOS compliant, and full-featured to help automate and simplify your Discord workflow.",
   "main": "src/index.ts",
   "scripts": {
-    "start": "npm run compile && pm2 start dist/index.js --name=\"Pyro.js\"",
+    "start": "npm run compile && node dist/index.js",
     "stop": "pm2 stop \"Pyro.js\"",
     "restart": "pm2 restart \"Pyro.js\"",
     "test": "karma start",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/tannerz28/pyro.js#readme",
   "dependencies": {
-    "discord.js": "^11.2.1",
+    "discord.js": "hydrabolt/discord.js",
     "discord.js-commando": "github:gawdl3y/discord.js-commando"
   },
   "devDependencies": {

@@ -9,12 +9,18 @@ export class PyroSelfBot {
     console.log('Starting selfbot')
     this.client = new CommandoClient({
       owner: userId,
-      commandPrefix: prefix
+      commandPrefix: prefix,
+      selfbot: true
     })
 
     this.client.on('ready', () => {
       console.log('Pyro.js ready')
-      this.client.user.setGame('Pyro.js Selfbot')
+      this.client.user.setPresence({
+        game: {
+          name: 'Pyro.js',
+          url: 'https://github.com/tannerz28/pyro.js'
+        }
+      })
     })
 
     this.client.on('message', msg => {
@@ -23,10 +29,7 @@ export class PyroSelfBot {
       }
     })
 
-    this.client.login(token)
-      .catch((err: any) => {
-        console.log(`Pyro.js failed to login: ${err}`)
-    })
+    this.client.on('error', console.error)
 
     this.client.registry
       .registerGroups([
@@ -34,5 +37,10 @@ export class PyroSelfBot {
       ])
       .registerDefaults()
       .registerCommandsIn(path.join(__dirname, 'commands'))
+
+    this.client.login(token)
+      .catch((err: any) => {
+        console.log(`Pyro.js failed to login: ${err}`)
+    })
   }
 }
