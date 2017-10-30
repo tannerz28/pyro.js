@@ -17,6 +17,12 @@ export class PyroSelfBot {
       this.client.user.setGame('Pyro.js Selfbot')
     })
 
+    this.client.on('message', msg => {
+      if(msg.author.id.toString() !== userId) {
+        return
+      }
+    })
+
     this.client.login(token)
       .catch((err: any) => {
         console.log(`Pyro.js failed to login: ${err}`)
