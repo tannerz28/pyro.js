@@ -1,12 +1,12 @@
 import { CommandoClient } from 'discord.js-commando'
-import * as path from 'path';
+import * as path from 'path'
 
 const { token, userId, prefix }: { token: string, userId: string, prefix: string } = require('../config.json')
 
 export class PyroSelfBot {
   private client: CommandoClient
-  public start(): void {
-    console.log('Starting selfbot')
+  public start (): void {
+    console.log('Starting Pyro.js')
     this.client = new CommandoClient({
       owner: userId,
       commandPrefix: prefix,
@@ -23,8 +23,8 @@ export class PyroSelfBot {
       })
     })
 
-    this.client.on('message', msg => {
-      if(msg.author.id.toString() !== userId) {
+    this.client.on('message', async msg => {
+      if (msg.author.id.toString() !== userId) {
         return
       }
     })
@@ -41,6 +41,6 @@ export class PyroSelfBot {
     this.client.login(token)
       .catch((err: any) => {
         console.log(`Pyro.js failed to login: ${err}`)
-    })
+      })
   }
 }
